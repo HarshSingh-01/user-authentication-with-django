@@ -52,3 +52,6 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('/')
+
+def user_info(request, id):
+    return render(request, 'userInfo.html')
