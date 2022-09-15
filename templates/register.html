@@ -1,0 +1,28 @@
+
+{% extends 'index.html' %}
+{% load static %}
+
+{% block  content%}
+<h1>Sign Up below:</h1>
+
+{% for message in messages %}
+    <h5>{{message}}</h5>
+{% endfor %}
+
+<form method="POST" action='register'>
+    {% csrf_token %}
+    <label> Enter username: </label>
+    <input type="text" name="username">
+    <br>
+    <label> Enter your email address: </label>
+    <input type="email" name="email">
+    <br>
+    <label> Enter your password: </label>
+    <input type="password" name="password">
+    <br>
+    <label> Re-Enter your password: </label>
+    <input type="password" name="password2">
+    <br>
+    <input type="submit" value='Submit'/>
+</form>
+{% endblock  %}

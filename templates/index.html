@@ -1,0 +1,15 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+
+{% block content %}
+{% if user.is_authenticated %}
+<h1>
+    Hello {{user.username}}!
+</h1>
+<button><a href='logout'>Logout</a></button>
+{% else %}
+<h1>Hello!</h1>
+<button><a href='login'>Login or Sing Up</a></button>
+{% endif %}
+{% endblock  %}
